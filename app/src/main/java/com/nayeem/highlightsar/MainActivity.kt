@@ -1,4 +1,4 @@
-package com.nayeem.augumentedimages
+package com.nayeem.highlightsar
 
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
@@ -14,16 +14,19 @@ import com.google.ar.core.Anchor
 import com.google.ar.core.AugmentedImage
 import com.google.ar.core.AugmentedImageDatabase
 import com.google.ar.core.Config
+import com.google.ar.core.Frame
 import com.google.ar.core.Session
 import com.google.ar.core.TrackingState
 import com.google.ar.sceneform.AnchorNode
 import com.google.ar.sceneform.FrameTime
+import com.google.ar.sceneform.Scene
 import com.google.ar.sceneform.rendering.ModelRenderable
 import com.google.ar.sceneform.rendering.Renderable
 import com.google.ar.sceneform.ux.ArFragment
 import com.google.ar.sceneform.ux.TransformableNode
 
 import java.io.IOException
+import java.io.InputStream
 
 class MainActivity : AppCompatActivity() {
     lateinit var arFragment: ArFragment
@@ -41,13 +44,13 @@ class MainActivity : AppCompatActivity() {
     @RequiresApi(api = Build.VERSION_CODES.N)
     private fun placeObject(arFragment: ArFragment, anchor: Anchor, uri: Uri) {
         ModelRenderable.builder()
-                .setSource(arFragment.context!!, uri)
-                .build()
-                .thenAccept { modelRenderable -> addNodeToScene(arFragment, anchor, modelRenderable) }
-                .exceptionally { throwable ->
-                    Toast.makeText(arFragment.context, "Error:" + throwable.message, Toast.LENGTH_LONG).show()
-                    null
-                }
+            .setSource(arFragment.context!!, uri)
+            .build()
+            .thenAccept { modelRenderable -> addNodeToScene(arFragment, anchor, modelRenderable) }
+            .exceptionally { throwable ->
+                Toast.makeText(arFragment.context, "Error:" + throwable.message, Toast.LENGTH_LONG).show()
+                null
+            }
     }
 
     @RequiresApi(api = Build.VERSION_CODES.N)
