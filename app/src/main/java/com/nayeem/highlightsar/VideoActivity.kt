@@ -128,7 +128,8 @@
 
  fun checkIsSupportedDeviceOrFinish(activity: Activity): Boolean {
  if (Build.VERSION.SDK_INT < VERSION_CODES.N) {
- Log.e(TAG, "Sceneform requires Android N or later")
+ Log.e(TAG, "Sceneform " +
+         "requires Android N or later")
  Toast.makeText(activity, "Sceneform requires Android N or later", Toast.LENGTH_LONG).show()
  activity.finish()
  return false
