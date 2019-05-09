@@ -1,6 +1,6 @@
  package com.nayeem.highlightsar
 
- import android.app.Activity;
+ /*import android.app.Activity;
  import android.app.ActivityManager;
  import android.content.Context;
  import android.graphics.ColorSpace
@@ -149,3 +149,4 @@
  }
 
  //public inline fun String.toDouble(): Double = java.lang.Double.parseDouble(this)
+*/

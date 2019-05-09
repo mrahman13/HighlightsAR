@@ -1,21 +1,18 @@
 package com.nayeem.highlightsar
 
 import android.app.ActivityManager
-import android.app.AlertDialog
 import android.content.Context
 import android.os.Bundle
-import android.support.v4.app.FragmentManager
-import android.support.v4.app.FragmentTransaction
-import android.support.v7.app.AppCompatActivity
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentTransaction
-
+import com.google.ar.sceneform.ux.ArFragment
 
 class MainActivity : AppCompatActivity() {
 
-    private val openGLVersion by lazy {
+    private val openGlVersion by lazy {
         (getSystemService(Context.ACTIVITY_SERVICE) as ActivityManager)
             .deviceConfigurationInfo
             .glEsVersion
@@ -26,7 +23,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         if (openGlVersion.toDouble() >= MIN_OPEN_GL_VERSION) {
-            supportFragmentManager.inTransaction { replace(R.id.fragmentContainer, ArVideoFragment()) }
+            supportFragmentManager.inTransaction { replace(R.id.fragmentContainer, ArVideoFragment() as Fragment) }
         } else {
             AlertDialog.Builder(this)
                 .setTitle("Device is not supported")
@@ -44,3 +41,5 @@ class MainActivity : AppCompatActivity() {
         private const val MIN_OPEN_GL_VERSION = 3.0
     }
 }
+
+

@@ -5,11 +5,27 @@ material {
             // The texture displaying the frames of the video.
             type : samplerExternal,
             name : videoTexture
+        },
+        {
+            type : float2,
+            name : imageSize
+        },
+        {
+            type : float2,
+            name : videoSize
+        },
+        {
+            type : bool,
+            name : videoCropEnabled
+        },
+        {
+            type : float,
+            name : videoAlpha
         }
     ],
     requires : [ uv0 ],
     shadingModel : unlit,
-    blending : opaque
+    blending : transparent
 }
 
 fragment {
