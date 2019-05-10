@@ -37,22 +37,6 @@ dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 }
 
-
-sceneform.asset('sampledata/BasketBallCourt/BasketBallCourt.obj',
-        'default',
-        'sampledata/BasketBallCourt/BasketBallCourt.sfa',
-        'src/main/assets/BasketBallCourt')
-
-sceneform.asset('sampledata/Tree/tree01.obj',
-        'default',
-        'sampledata/Tree/tree01.sfa',
-        'src/main/assets/tree01')
-repositories {
-    mavenCentral()
-}
-
-
-
 sceneform.asset('sampledata/augmented_video_model.obj',
         'sampledata/augmented_video_material.mat',
         'sampledata/augmented_video_model.sfa',
