@@ -9,6 +9,8 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentTransaction
 
+//All video placing functionality is thanks to @shliama
+
 class MainActivity : AppCompatActivity() {
 
     private val openGlVersion by lazy {

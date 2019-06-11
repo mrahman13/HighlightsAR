@@ -213,12 +213,9 @@ open class ArVideoFragment : ArFragment() {
         private const val TAG = "ArVideoFragment"
 
         private const val TEST_IMAGE_1 = "giannis.jpg"
-        private const val TEST_IMAGE_2 = "test_image_2.jpg"
-        private const val TEST_IMAGE_3 = "test_image_3.jpg"
 
         private const val TEST_VIDEO_1 = "giannis_dunk.mp4"
-        private const val TEST_VIDEO_2 = "test_video_2.mp4"
-        private const val TEST_VIDEO_3 = "test_video_3.mp4"
+
 
         private const val VIDEO_CROP_ENABLED = true
 
